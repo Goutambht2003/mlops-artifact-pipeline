@@ -20,6 +20,8 @@ model = LogisticRegression(
 model.fit(X, y)
 
 # Save the model
-joblib.dump(model, 'model_train.pkl')
+# After training model
+joblib.dump(model, "model.pkl")
 
-print("✅ Model trained and saved as model_train.pkl")
+
+print("✅ Model trained and saved as model.pkl")
