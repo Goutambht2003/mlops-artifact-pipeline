@@ -1,0 +1,1 @@
+import joblibfrom sklearn.datasets import load_digitsdef run_inference():    model = joblib.load("model.pkl")    X, _ = load_digits(return_X_y=True)    preds = model.predict(X[:10])    print("Predictions:", preds)    return predsif __name__ == "__main__":    run_inference()
