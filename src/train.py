@@ -2,6 +2,7 @@ import json
 import joblib
 from sklearn.datasets import load_digits
 from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
 
 # Load config from JSON
 with open('config/config.json') as f:
@@ -10,6 +11,10 @@ with open('config/config.json') as f:
 # Load digits dataset
 digits = load_digits()
 X, y = digits.data, digits.target
+
+# Add this:
+scaler = StandardScaler()
+X = scaler.fit_transform(X)
 
 # Create and train Logistic Regression model
 model = LogisticRegression(
